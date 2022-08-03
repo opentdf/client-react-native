@@ -6,14 +6,16 @@ const LINKING_ERROR =
   '- You rebuilt the app after installing the package\n' +
   '- You are not using Expo managed workflow\n';
 
-const ReactNativeOpenTDF = NativeModules.ReactNativeOpenTDF ? NativeModules.ReactNativeOpenTDF : new Proxy(
-  {},
-  {
-    get() {
-      throw new Error(LINKING_ERROR);
-    },
-  }
-);
+const ReactNativeOpenTDF = NativeModules.ReactNativeOpenTDF
+  ? NativeModules.ReactNativeOpenTDF
+  : new Proxy(
+      {},
+      {
+        get() {
+          throw new Error(LINKING_ERROR);
+        },
+      }
+    );
 
 export function setUsername(username: string): Promise<number> {
   return ReactNativeOpenTDF.setUsername(username);
@@ -39,18 +41,12 @@ export function setOIDCEndpoint(endpoint: string): Promise<number> {
   return ReactNativeOpenTDF.setOIDCEndpoint(endpoint);
 }
 
-
 export function encryptText(inputText: string): Promise<string> {
   return ReactNativeOpenTDF.encryptText(inputText);
 }
 
-export function decryptText(decryptText: string): Promise<string> {
-  return ReactNativeOpenTDF.decryptText(decryptText);
-}
-
-export function initClient(clientId: string, clientSecret: string, oidcEndpoint: string, kasEndpoint: string): void {
-  // return ReactNativeOpenTDF.decryptText(decryptText);
-  // return Promise.resolve<string>()
+export function decryptText(textToDecrypt: string): Promise<string> {
+  return ReactNativeOpenTDF.decryptText(textToDecrypt);
 }
 
 const client = {
@@ -62,6 +58,6 @@ const client = {
   setClientSecret,
   setUsername,
   setOrganizationName,
-}
+};
 
 export default client;

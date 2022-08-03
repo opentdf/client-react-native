@@ -25,6 +25,7 @@
     "test": "jest",
     "typescript": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
+    "fix-eslint": "eslint --fix \"**/*.{js,ts,tsx}\"",
     "prepare": "bob build",
     "release": "release-it",
     "example": "yarn --cwd example",
@@ -148,5 +149,7 @@
       ]
     ]
   },
-  "dependencies": {}
+  "dependencies": {
+    "eslint-plugin-react-native": "^4.0.0"
+  }
 }

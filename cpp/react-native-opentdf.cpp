@@ -114,9 +114,7 @@ namespace VirtruReactNative
 			VirtruReactNative::tdfClient = std::make_unique<virtru::TDFClient>(VirtruReactNative::clientCreds, VirtruReactNative::KAS_ENDPOINT);
 			VirtruReactNative::instanceCreated = true;
 		}
-		VirtruReactNative::instanceCreated;
-
-		return true;
+		return VirtruReactNative::instanceCreated;
 	}
 
 	//////////////////////////////////////

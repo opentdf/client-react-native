@@ -18,6 +18,8 @@ namespace VirtruReactNative
 	bool setOrganizationName(const char *orgName);
 	bool setClientId(const char *clientId);
 	bool setClientSecret(const char *secret);
+	bool addDataAttribute(const char *dataAttribute);
+
 
 }
 

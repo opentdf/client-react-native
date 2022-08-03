@@ -17,6 +17,10 @@ const ReactNativeOpenTDF = NativeModules.ReactNativeOpenTDF
       }
     );
 
+export function addDataAttribute(dataAttribute: string): Promise<number> {
+  return ReactNativeOpenTDF.addDataAttribute(dataAttribute);
+}
+
 export function setUsername(username: string): Promise<number> {
   return ReactNativeOpenTDF.setUsername(username);
 }

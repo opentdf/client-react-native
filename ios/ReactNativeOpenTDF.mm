@@ -33,6 +33,17 @@ RCT_EXPORT_METHOD(decryptText:(nonnull NSString *)base64EncryptedString
     resolve(decryptedString);
 }
 
+// addDataAttribute - invoke C++ func
+RCT_EXPORT_METHOD(addDataAttribute:(nonnull NSString *)dataAtrribute
+                   withResolver:(RCTPromiseResolveBlock)resolve
+                   withReject:(RCTPromiseRejectBlock)reject)
+{
+    std::string dataAtrributeStr = std::string([dataAtrribute UTF8String]);
+    //we should probably return some sort of success or fail here
+    VirtruReactNative::addDataAttribute(dataAtrributeStr.c_str());
+    
+}
+
 // setOIDCEndpoint - invoke C++ func
 RCT_EXPORT_METHOD(setOIDCEndpoint:(nonnull NSString *)endpoint
                    withResolver:(RCTPromiseResolveBlock)resolve
@@ -44,7 +55,7 @@ RCT_EXPORT_METHOD(setOIDCEndpoint:(nonnull NSString *)endpoint
 
 }
 
-// setOIDCEndpoint - invoke C++ func
+// setKASEndpoint - invoke C++ func
 RCT_EXPORT_METHOD(setKASEndpoint:(nonnull NSString *)endpoint
                    withResolver:(RCTPromiseResolveBlock)resolve
                    withReject:(RCTPromiseRejectBlock)reject)

@@ -104,9 +104,8 @@ namespace VirtruReactNative
 		}
 	}
 
-	std::string encryptText(const char *inputText)
+	bool checkForInstance()
 	{
-		using namespace virtru;
 		// These are the credentials of OpenTDF backend when run locally
 		// NOTE: Port 3000 is pointing at a proxy right now, since the openTDF backend won't work unless it receives requests from "localhost"
 		if (VirtruReactNative::instanceCreated == false)
@@ -115,9 +114,43 @@ namespace VirtruReactNative
 			VirtruReactNative::tdfClient = std::make_unique<virtru::TDFClient>(VirtruReactNative::clientCreds, VirtruReactNative::KAS_ENDPOINT);
 			VirtruReactNative::instanceCreated = true;
 		}
+		VirtruReactNative::instanceCreated;
+
+		return true;
+	}
+
+	//////////////////////////////////////
+	//////////////////////////////////////
+	//////////SDK Client Methods//////////
+	//////////////////////////////////////
+	//////////////////////////////////////
+	//////////////////////////////////////
+	//////////////////////////////////////
+	//////////////////////////////////////
+
+	bool addDataAttribute(const char *dataAttribute)
+	{
+		try
+		{
+			VirtruReactNative::checkForInstance();
+			VirtruReactNative::tdfClient->addDataAttribute(std::string(dataAttribute), VirtruReactNative::KAS_ENDPOINT);
+			return true;
+		}
+		catch (const std::exception &e)
+		{
+			std::cerr << e.what() << '\n';
+			return false;
+		}
+	}
+
+	std::string encryptText(const char *inputText)
+	{
+		using namespace virtru;
 
 		try
 		{
+			// make sure we have a tdfClient to work with
+			VirtruReactNative::checkForInstance();
 
 			std::string cipherText = VirtruReactNative::tdfClient->encryptString(inputText);
 			// auto plainText = nanoTDFClient->decryptString(cipherText);
@@ -153,18 +186,11 @@ namespace VirtruReactNative
 	std::string decryptText(std::string cyperText)
 	{
 		using namespace virtru;
-		// create a new instance if we don't have one
-		if (VirtruReactNative::instanceCreated == false)
-		{
-			// These are the credentials of OpenTDF backend when run locally
-			// NOTE: Port 3000 is pointing at a proxy right now, since the openTDF backend won't work unless it receives requests from "localhost"
-			VirtruReactNative::clientCreds.setClientCredentialsClientSecret(CLIENT_ID, CLIENT_SECRET, ORGANIZATION_NAME, OIDC_ENDPOINT);
-			VirtruReactNative::tdfClient = std::make_unique<virtru::TDFClient>(VirtruReactNative::clientCreds, VirtruReactNative::KAS_ENDPOINT);
-			VirtruReactNative::instanceCreated = true;
-		}
 
 		try
 		{
+			// make sure we have a tdfClient to work with
+			VirtruReactNative::checkForInstance();
 
 			std::string plainText = VirtruReactNative::tdfClient->decryptString(cyperText);
 

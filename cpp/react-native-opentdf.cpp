@@ -1,8 +1,6 @@
-#include "react-native-opentdf.h"
-#include "./../ios/virtrusdk/include/virtru_client.h"
 #include <iostream>
 #include <unordered_map>
-
+#include "react-native-opentdf.h"
 #include "./../lib/include/oidc_credentials.h"
 #include "./../lib/include/tdf_client.h"
 #include "./../lib/include/nanotdf_client.h"

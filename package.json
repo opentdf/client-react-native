@@ -35,13 +35,13 @@
     "ios",
     "android"
   ],
-  "repository": "https://github.com/virtru-corp/react-native-opentdf",
+  "repository": "https://github.com/opentdf/client-react-native",
   "author": "Avery Pfeiffer <avery.pfeiffer@virtru.com> (https://github.com/averypfeiffer)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/virtru-corp/react-native-opentdf/issues"
+    "url": "https://github.com/opentdf/client-react-native/issues"
   },
-  "homepage": "https://github.com/virtru-corp/react-native-opentdf#readme",
+  "homepage": "https://github.com/opentdf/client-react-native#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },

@@ -56,6 +56,7 @@ export function decryptText(textToDecrypt: string): Promise<string> {
 const client = {
   decryptText,
   encryptText,
+  addDataAttribute,
   setKASEndpoint,
   setOIDCEndpoint,
   setClientId,

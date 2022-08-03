@@ -1,5 +1,5 @@
 #import "MobileSdkReactNative.h"
-#import "mobile-sdk-react-native.h"
+#import "react-native-opentdf.h"
 
 @implementation MobileSdkReactNative
 RCT_EXPORT_MODULE()

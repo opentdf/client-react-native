@@ -1,5 +1,5 @@
 #include <jni.h>
-#include "mobile-sdk-react-native.h"
+#include "react-native-opentdf.h"
 
 extern "C"
 JNIEXPORT jint JNICALL

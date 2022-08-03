@@ -2,7 +2,7 @@
 
 #ifdef __cplusplus
 
-#import "mobile-sdk-react-native.h"
+#import "react-native-opentdf.h"
 
 #endif
 

@@ -5,7 +5,7 @@ set (CMAKE_CXX_STANDARD 11)
 
 add_library(cpp
             SHARED
-            ../cpp/mobile-sdk-react-native.cpp
+            ../cpp/react-native-opentdf.cpp
             cpp-adapter.cpp
 )
 

@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "mobile-sdk-react-native": ["./src/index"]
+      "react-native-opentdf": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,

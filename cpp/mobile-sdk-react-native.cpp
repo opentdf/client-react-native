@@ -1,4 +1,4 @@
-#include "mobile-sdk-react-native.h"
+#include "react-native-opentdf.h"
 #include "./../ios/virtrusdk/include/virtru_client.h"
 #include <iostream>
 #include <unordered_map>

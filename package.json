@@ -1,5 +1,5 @@
 {
-  "name": "mobile-sdk-react-native",
+  "name": "react-native-opentdf",
   "version": "0.1.0",
   "description": "test",
   "main": "lib/commonjs/index",
@@ -13,7 +13,7 @@
     "android",
     "ios",
     "cpp",
-    "mobile-sdk-react-native.podspec",
+    "react-native-opentdf.podspec",
     "!lib/typescript/example",
     "!android/build",
     "!ios/build",
@@ -35,13 +35,13 @@
     "ios",
     "android"
   ],
-  "repository": "https://github.com/virtru-corp/mobile-sdk-react-native",
+  "repository": "https://github.com/virtru-corp/react-native-opentdf",
   "author": "Avery Pfeiffer <avery.pfeiffer@virtru.com> (https://github.com/averypfeiffer)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/virtru-corp/mobile-sdk-react-native/issues"
+    "url": "https://github.com/virtru-corp/react-native-opentdf/issues"
   },
-  "homepage": "https://github.com/virtru-corp/mobile-sdk-react-native#readme",
+  "homepage": "https://github.com/virtru-corp/react-native-opentdf#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },

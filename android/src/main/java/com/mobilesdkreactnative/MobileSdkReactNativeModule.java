@@ -1,4 +1,4 @@
-package com.mobilesdkreactnative;
+package com.reactnativeopentdf;
 
 import androidx.annotation.NonNull;
 
@@ -8,11 +8,11 @@ import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.module.annotations.ReactModule;
 
-@ReactModule(name = MobileSdkReactNativeModule.NAME)
-public class MobileSdkReactNativeModule extends ReactContextBaseJavaModule {
-    public static final String NAME = "MobileSdkReactNative";
+@ReactModule(name = ReactNativeOpenTDFModule.NAME)
+public class ReactNativeOpenTDFModule extends ReactContextBaseJavaModule {
+    public static final String NAME = "ReactNativeOpenTDF";
 
-    public MobileSdkReactNativeModule(ReactApplicationContext reactContext) {
+    public ReactNativeOpenTDFModule(ReactApplicationContext reactContext) {
         super(reactContext);
     }
 

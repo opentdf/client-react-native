@@ -1,7 +1,7 @@
-#import "MobileSdkReactNative.h"
+#import "ReactNativeOpenTDF.h"
 #import "react-native-opentdf.h"
 
-@implementation MobileSdkReactNative
+@implementation ReactNativeOpenTDF
 RCT_EXPORT_MODULE()
 
 // EncryptText - invoke C++ func

@@ -6,7 +6,7 @@ const LINKING_ERROR =
   '- You rebuilt the app after installing the package\n' +
   '- You are not using Expo managed workflow\n';
 
-const MobileSdkReactNative = NativeModules.MobileSdkReactNative ? NativeModules.MobileSdkReactNative : new Proxy(
+const ReactNativeOpenTDF = NativeModules.ReactNativeOpenTDF ? NativeModules.ReactNativeOpenTDF : new Proxy(
   {},
   {
     get() {
@@ -16,40 +16,40 @@ const MobileSdkReactNative = NativeModules.MobileSdkReactNative ? NativeModules.
 );
 
 export function setUsername(username: string): Promise<number> {
-  return MobileSdkReactNative.setUsername(username);
+  return ReactNativeOpenTDF.setUsername(username);
 }
 
 export function setOrganizationName(username: string): Promise<number> {
-  return MobileSdkReactNative.setOrganizationName(username);
+  return ReactNativeOpenTDF.setOrganizationName(username);
 }
 
 export function setClientId(clientId: string): Promise<number> {
-  return MobileSdkReactNative.setClientId(clientId);
+  return ReactNativeOpenTDF.setClientId(clientId);
 }
 
 export function setClientSecret(secret: string): Promise<number> {
-  return MobileSdkReactNative.setClientSecret(secret);
+  return ReactNativeOpenTDF.setClientSecret(secret);
 }
 
 export function setKASEndpoint(endpoint: string): Promise<number> {
-  return MobileSdkReactNative.setKASEndpoint(endpoint);
+  return ReactNativeOpenTDF.setKASEndpoint(endpoint);
 }
 
 export function setOIDCEndpoint(endpoint: string): Promise<number> {
-  return MobileSdkReactNative.setOIDCEndpoint(endpoint);
+  return ReactNativeOpenTDF.setOIDCEndpoint(endpoint);
 }
 
 
 export function encryptText(inputText: string): Promise<string> {
-  return MobileSdkReactNative.encryptText(inputText);
+  return ReactNativeOpenTDF.encryptText(inputText);
 }
 
 export function decryptText(decryptText: string): Promise<string> {
-  return MobileSdkReactNative.decryptText(decryptText);
+  return ReactNativeOpenTDF.decryptText(decryptText);
 }
 
 export function initClient(clientId: string, clientSecret: string, oidcEndpoint: string, kasEndpoint: string): void {
-  // return MobileSdkReactNative.decryptText(decryptText);
+  // return ReactNativeOpenTDF.decryptText(decryptText);
   // return Promise.resolve<string>()
 }
 

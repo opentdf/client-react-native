@@ -20,11 +20,11 @@ if (isNewArchitectureEnabled()) {
 }
 
 def getExtOrDefault(name) {
-  return rootProject.ext.has(name) ? rootProject.ext.get(name) : project.properties['MobileSdkReactNative_' + name]
+  return rootProject.ext.has(name) ? rootProject.ext.get(name) : project.properties['ReactNativeOpenTDF_' + name]
 }
 
 def getExtOrIntegerDefault(name) {
-  return rootProject.ext.has(name) ? rootProject.ext.get(name) : (project.properties['MobileSdkReactNative_' + name]).toInteger()
+  return rootProject.ext.has(name) ? rootProject.ext.get(name) : (project.properties['ReactNativeOpenTDF_' + name]).toInteger()
 }
 
 android {
@@ -143,7 +143,7 @@ dependencies {
 if (isNewArchitectureEnabled()) {
   react {
     jsRootDir = file("../src/")
-    libraryName = "MobileSdkReactNative"
-    codegenJavaPackageName = "com.mobilesdkreactnative"
+    libraryName = "ReactNativeOpenTDF"
+    codegenJavaPackageName = "com.reactnativeopentdf"
   }
 }

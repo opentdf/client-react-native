@@ -13,8 +13,7 @@ RCT_EXPORT_METHOD(encryptText:(nonnull NSString *)inputText
     std::string result = VirtruReactNative::encryptText(temp.c_str());
     NSData* data = [[NSData alloc] initWithBytes:(result).c_str() length:result.size()];
     NSString* encryptedBase64Encoded = [data base64EncodedStringWithOptions:0];
-    resolve(encryptedBase64Encoded);
-    
+    resolve(encryptedBase64Encoded);   
 }
 
 // DecryptText - invoke C++ func
@@ -41,7 +40,8 @@ RCT_EXPORT_METHOD(addDataAttribute:(nonnull NSString *)dataAtrribute
     std::string dataAtrributeStr = std::string([dataAtrribute UTF8String]);
     //we should probably return some sort of success or fail here
     VirtruReactNative::addDataAttribute(dataAtrributeStr.c_str());
-    
+
+    resolve(@"success");
 }
 
 // setOIDCEndpoint - invoke C++ func
@@ -52,7 +52,7 @@ RCT_EXPORT_METHOD(setOIDCEndpoint:(nonnull NSString *)endpoint
     std::string endpointStr = std::string([endpoint UTF8String]);
     //we should probably return some sort of success or fail here
     VirtruReactNative::setOIDCEndpoint(endpointStr.c_str());
-
+    resolve(@"success");
 }
 
 // setKASEndpoint - invoke C++ func
@@ -63,7 +63,7 @@ RCT_EXPORT_METHOD(setKASEndpoint:(nonnull NSString *)endpoint
     std::string endpointStr = std::string([endpoint UTF8String]);
     //we should probably return some sort of success or fail here
     VirtruReactNative::setKASEndpoint(endpointStr.c_str());
-    
+    resolve(@"success");
 }
 
 
@@ -75,7 +75,7 @@ RCT_EXPORT_METHOD(setClientId:(nonnull NSString *)clientId
     std::string clientIdStr = std::string([clientId UTF8String]);
     //we should probably return some sort of success or fail here
     VirtruReactNative::setClientId(clientIdStr.c_str());
-    
+    resolve(@"success");
 }
 
 // setClientSecret - invoke C++ func
@@ -86,6 +86,7 @@ RCT_EXPORT_METHOD(setClientSecret:(nonnull NSString *)secret
     std::string secretStr = std::string([secret UTF8String]);
     //we should probably return some sort of success or fail here
     VirtruReactNative::setClientSecret(secretStr.c_str());
+    resolve(@"success");
 }
 
 // setUsername - invoke C++ func
@@ -96,6 +97,7 @@ RCT_EXPORT_METHOD(setUsername:(nonnull NSString *)username
     std::string usernameStr = std::string([username UTF8String]);
     //we should probably return some sort of success or fail here
     VirtruReactNative::setUsername(usernameStr.c_str());
+    resolve(@"success");
 }
 
 // setOrganizationName - invoke C++ func
@@ -106,6 +108,7 @@ RCT_EXPORT_METHOD(setOrganizationName:(nonnull NSString *)organizationName
     std::string organizationNameStr = std::string([organizationName UTF8String]);
     //we should probably return some sort of success or fail here
     VirtruReactNative::setOrganizationName(organizationNameStr.c_str());
+    resolve(@"success");
 }
 
 

@@ -53,6 +53,29 @@ export function decryptText(textToDecrypt: string): Promise<string> {
   return ReactNativeOpenTDF.decryptText(textToDecrypt);
 }
 
+//This is WIP, need to flesh out implementation
+export async function decryptObjectValues(data: any) {
+  const keys : Array<any> = Object.keys(data);
+  for (let i = 0; i < keys.length; i++) {
+      //lets make sure to skip the one we know isn't encrypted
+      const key = keys[i];
+      if (key == `id` || key == `uuid`) {
+          continue;
+      }
+      let value = data[key]
+      value = await client.decryptText(value)
+      //now we need to account for the data type
+      if(value == "true" || value == "false"){
+          value = JSON.parse(value)
+      }
+
+      data[key] = value
+  }
+  return data
+}
+
+
+
 const client = {
   decryptText,
   encryptText,

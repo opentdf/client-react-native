@@ -15,10 +15,14 @@ namespace VirtruReactNative
   bool setOIDCEndpoint(const char *endpoint);
   bool setKASEndpoint(const char *endpoint);
   bool setUsername(const char *username);
-	bool setOrganizationName(const char *orgName);
-	bool setClientId(const char *clientId);
-	bool setClientSecret(const char *secret);
-	bool addDataAttribute(const char *dataAttribute);
+  bool setOrganizationName(const char *orgName);
+  bool setClientId(const char *clientId);
+  bool setClientSecret(const char *secret);
+  bool addDataAttribute(const char *dataAttribute);
+  bool initClient();
+  //checks for an existing instance of the client, and creates one if one is not found
+  bool checkForInstance();
+  std::string readDataAttributes();
 
 
 }

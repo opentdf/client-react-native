@@ -44,6 +44,25 @@ RCT_EXPORT_METHOD(addDataAttribute:(nonnull NSString *)dataAtrribute
     resolve(@"success");
 }
 
+RCT_EXPORT_METHOD(readDataAttributes:(nonnull NSString *)dataAtrribute
+                   withResolver:(RCTPromiseResolveBlock)resolve
+                   withReject:(RCTPromiseRejectBlock)reject)
+{
+    //we should probably return some sort of success or fail here
+    std::string result = VirtruReactNative::readDataAttributes();
+    NSString* attributeStr = [NSString stringWithUTF8String:(result).c_str()];
+    resolve(attributeStr);
+}
+
+RCT_EXPORT_METHOD(initClient:(nonnull NSString *)dataAtrribute
+                   withResolver:(RCTPromiseResolveBlock)resolve
+                   withReject:(RCTPromiseRejectBlock)reject)
+{
+    //we should probably return some sort of success or fail here
+    VirtruReactNative::initClient();
+    resolve(@"success");
+}
+
 // setOIDCEndpoint - invoke C++ func
 RCT_EXPORT_METHOD(setOIDCEndpoint:(nonnull NSString *)endpoint
                    withResolver:(RCTPromiseResolveBlock)resolve

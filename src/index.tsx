@@ -21,6 +21,15 @@ export function addDataAttribute(dataAttribute: string): Promise<number> {
   return ReactNativeOpenTDF.addDataAttribute(dataAttribute);
 }
 
+export function readDataAttributes(): Promise<string> {
+  return ReactNativeOpenTDF.readDataAttributes("Just a place holder. Need to fix later");
+}
+
+export function initClient(): Promise<string> {
+  return ReactNativeOpenTDF.initClient("Just a place holder. Need to fix later");
+}
+
+
 export function setUsername(username: string): Promise<number> {
   return ReactNativeOpenTDF.setUsername(username);
 }
@@ -77,9 +86,11 @@ export async function decryptObjectValues(data: any) {
 
 
 const client = {
+  initClient,
   decryptText,
   encryptText,
   addDataAttribute,
+  readDataAttributes,
   setKASEndpoint,
   setOIDCEndpoint,
   setClientId,

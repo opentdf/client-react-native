@@ -104,6 +104,8 @@ namespace VirtruReactNative
 		}
 	}
 
+
+
 	bool checkForInstance()
 	{
 		// These are the credentials of OpenTDF backend when run locally
@@ -117,6 +119,14 @@ namespace VirtruReactNative
 		return VirtruReactNative::instanceCreated;
 	}
 
+    bool initClient()
+    {
+        VirtruReactNative::instanceCreated = false;
+        // These are the credentials of OpenTDF backend when run locally
+        // NOTE: Port 3000 is pointing at a proxy right now, since the openTDF backend won't work unless it receives requests from "localhost"
+        return VirtruReactNative::checkForInstance();
+    }
+
 	//////////////////////////////////////
 	//////////////////////////////////////
 	//////////SDK Client Methods//////////
@@ -125,6 +135,23 @@ namespace VirtruReactNative
 	//////////////////////////////////////
 	//////////////////////////////////////
 	//////////////////////////////////////
+
+    std::string readDataAttributes()
+    {
+        try
+        {
+            VirtruReactNative::checkForInstance();
+            std::vector<std::string> result = VirtruReactNative::tdfClient->getDataAttributes();
+            
+            std::string concatStr = std::accumulate(result.begin(), result.end(), std::string(""));
+            return concatStr;
+        }
+        catch (const std::exception &e)
+        {
+            std::cerr << e.what() << '\n';
+            return "error";
+        }
+    }
 
 	bool addDataAttribute(const char *dataAttribute)
 	{

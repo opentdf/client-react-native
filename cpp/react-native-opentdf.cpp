@@ -143,7 +143,7 @@ namespace VirtruReactNative
             VirtruReactNative::checkForInstance();
             std::vector<std::string> result = VirtruReactNative::tdfClient->getDataAttributes();
             
-            std::string concatStr = std::accumulate(result.begin(), result.end(), std::string(""));
+            std::string concatStr = std::accumulate(result.begin(), result.end(), std::string(","));
             return concatStr;
         }
         catch (const std::exception &e)

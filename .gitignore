@@ -1,0 +1,7 @@
+
+.DS_Store
+node_modules/*
+.vscode/*
+ios/ReactNativeOpenTDF.xcodeproj/project.xcworkspace/xcuserdata/avery.pfeiffer.xcuserdatad/UserInterfaceState.xcuserstate
+ios/ReactNativeOpenTDF.xcodeproj/xcuserdata/avery.pfeiffer.xcuserdatad/xcschemes/xcschememanagement.plist
+ios/ReactNativeOpenTDF.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
